@@ -23,16 +23,16 @@
 
 ### Usage:
 ```
-    python Coding_Conversion.py -f zip_file.zip'
-    python Coding_Conversion.py --file_sha1 zip_file.zip'
-    python Coding_Conversion.py --file_sha254 zip_file.zip'
+python Coding_Conversion.py -f zip_file.zip'
+python Coding_Conversion.py --file_sha1 zip_file.zip'
+python Coding_Conversion.py --file_sha254 zip_file.zip'
     
-    python Coding_Conversion.py -b "i am your father"'
-    python Coding_Conversion.py --base64_decode "aSBhbSB5b3VyIGZhdGhlcg=="'
+python Coding_Conversion.py -b "i am your father"'
+python Coding_Conversion.py --base64_decode "aSBhbSB5b3VyIGZhdGhlcg=="'
   
-    python Coding_Conversion.py -u "select * from users"'
-    python Coding_Conversion.py -url_decode "select%20%2A%20from%20users"'
+python Coding_Conversion.py -u "select * from users"'
+python Coding_Conversion.py -url_decode "select%20%2A%20from%20users"'
   
-    python Coding_Conversion.py -e "i am your father"'
-    python Coding_Conversion.py --hex_decode "6920616d20796f757220666174686572"'
+python Coding_Conversion.py -e "i am your father"'
+python Coding_Conversion.py --hex_decode "6920616d20796f757220666174686572"'
 ```
