@@ -1,6 +1,7 @@
 ## Coding_Conversion
 
-##### This is Coding Conversion script, it can conversion coding like url md5 sha1 sha254 ...
+##### Coding Conversion script, can conversion coding or decode like url md5 sha1 sha254 base64 hex
+
 ### Total Parameters:
 ```
 -h --help               get this script help
