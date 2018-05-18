@@ -37,7 +37,7 @@ def usage():
     print '[*] --file_sha1           use sha1 to calculate file hash'
     print '[*] --file_sha254         use sha254 to calculate file hash'
     print
-    print '[*] -b --base64_encode    -s option default is base64 encode'
+    print '[*] -b --base64_encode    -b option default is base64 encode'
     print '[*] --base64_decode'
     print
     print '[*] -u --url_encode       url encode, -u option default is url encode'
