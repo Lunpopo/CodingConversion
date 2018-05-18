@@ -1,7 +1,7 @@
 ## Coding_Conversion
-#####This is Coding Conversion script, it can conversion coding like url md5 sha1 sha254 ...
 
-###Total Parameters:
+##### This is Coding Conversion script, it can conversion coding like url md5 sha1 sha254 ...
+### Total Parameters:
 ```
 -h --help               get this script help
 -f                      calculate file hash value, default md5
@@ -20,7 +20,7 @@
 -e --hex_decode'
 ```
 
-###Usage:
+### Usage:
 ```
     python Coding_Conversion.py -f zip_file.zip'
     python Coding_Conversion.py --file_sha1 zip_file.zip'
