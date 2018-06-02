@@ -8,7 +8,8 @@
 -f                      calculate file hash value, default md5
 --file_md5              use md5 to calculate file hash
 --file_sha1             use sha1 to calculate file hash
---file_sha254           use sha254 to calculate file hash
+--file_sha256           use sha256 to calculate file hash
+--file_sha512           use sha512 to calculate file hash
 
 -b --base64_encode      -b option default is base64 encode
 --base64_decode
@@ -25,7 +26,8 @@
 ```
 python Coding_Conversion.py -f zip_file.zip
 python Coding_Conversion.py --file_sha1 zip_file.zip
-python Coding_Conversion.py --file_sha254 zip_file.zip
+python Coding_Conversion.py --file_sha256 zip_file.zip
+python Coding_Conversion.py --file_sha512 zip_file.zip
 
 python Coding_Conversion.py -b "i am your father"
 python Coding_Conversion.py --base64_decode "aSBhbSB5b3VyIGZhdGhlcg=="

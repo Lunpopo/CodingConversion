@@ -36,7 +36,8 @@ def usage():
     print '[*] -f                    calculate file hash value, default md5'
     print '[*] --file_md5            use md5 to calculate file hash'
     print '[*] --file_sha1           use sha1 to calculate file hash'
-    print '[*] --file_sha254         use sha254 to calculate file hash'
+    print '[*] --file_sha256         use sha256 to calculate file hash'
+    print '[*] --file_sha512         use sha512 to calculate file hash'
     print
     print '[*] -b --base64_encode    -b option default is base64 encode'
     print '[*] --base64_decode'
@@ -51,7 +52,8 @@ def usage():
     print 'Usage:'
     print '[*] python Coding_Conversion.py -f zip_file.zip'
     print '[*] python Coding_Conversion.py --file_sha1 zip_file.zip'
-    print '[*] python Coding_Conversion.py --file_sha254 zip_file.zip'
+    print '[*] python Coding_Conversion.py --file_sha256 zip_file.zip'
+    print '[*] python Coding_Conversion.py --file_sha512 zip_file.zip'
     print
     print '[*] python Coding_Conversion.py -b "i am your father"'
     print '[*] python Coding_Conversion.py --base64_decode "aSBhbSB5b3VyIGZhdGhlcg=="'
@@ -75,6 +77,7 @@ def main():
             'file_md5=',
             'file_sha1=',
             'file_sha256=',
+            'file_sha512=',
             'base64_encode=',
             'base64_decode=',
             'url_encode=',
@@ -101,12 +104,17 @@ def main():
         elif o in ['--file_sha256']:
             sha256_hash = hashlib.sha256(open(a, 'rb').read()).hexdigest()
             print 'File Name: ', a
-            print 'Calculate Hash Values', sha256_hash
+            print 'Calculate Hash Values: ', sha256_hash
+
+        elif o in ['--file_sha512']:
+            sha512_hash = hashlib.sha512(open(a, 'rb').read()).hexdigest()
+            print 'File Name: ', a
+            print 'Calculate Hash Values: ', sha512_hash
 
         elif o in ['-b', '--base64_encode']:
             base64_str = base64.b64encode(a)
             print 'Raw Data: ', a
-            print 'Conversion Data', base64_str
+            print 'Conversion Data: ', base64_str
 
         elif o in ['--base64_decode']:
             string = a
