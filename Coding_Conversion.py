@@ -50,6 +50,12 @@ def usage():
     print '                          -e option default is hex encode'
     print '[*] -e --hex_decode'
     print
+    print '[*] -a --ascii_encode     use ascii encode'
+    print '[*] -m --md5_hash         use md5 hash algorithm escape string'
+    print '[*] --sha1_hash           use sha1 hash algorithm escape string'
+    print '[*] --sha256_hash         use sha256 hash algorithm escape string'
+    print '[*] --sha512_hash         use sha512 hash algorithm escape string'
+    print
     print 'Usage:'
     print '[*] python Coding_Conversion.py -f zip_file.zip'
     print '[*] python Coding_Conversion.py --file_sha1 zip_file.zip'
@@ -60,10 +66,15 @@ def usage():
     print '[*] python Coding_Conversion.py --base64_decode "aSBhbSB5b3VyIGZhdGhlcg=="'
     print
     print '[*] python Coding_Conversion.py -u "select * from users"'
-    print '[*] python Coding_Conversion.py -url_decode "select%20%2A%20from%20users"'
+    print '[*] python Coding_Conversion.py -url_decode "%73%65%6c%65%63%74"'
     print
     print '[*] python Coding_Conversion.py -e "i am your father"'
-    print '[*] python Coding_Conversion.py --hex_decode "6920616d20796f757220666174686572"'
+    print '[*] python Coding_Conversion.py --hex_decode "0x6920616d20796f757220666174686572"'
+    print '[*] python Coding_Conversion.py -a "nidaye"'
+    print '[*] python Coding_Conversion.py -m "nidaye"'
+    print '[*] python Coding_Conversion.py --sha1_hash "nidaye"'
+    print '[*] python Coding_Conversion.py --sha256_hash "nidaye"'
+    print '[*] python Coding_Conversion.py --sha512_hash "nidaye"'
     sys.exit(0)
 
 
@@ -73,7 +84,7 @@ def main():
         usage()
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], 'hf:b:u:e:', [
+        opts, args = getopt.getopt(sys.argv[1:], 'hf:b:u:e:a:m:', [
             'help',
             'file_md5=',
             'file_sha1=',
@@ -85,6 +96,11 @@ def main():
             'url_decode=',
             'hex_encode=',
             'hex_decode=',
+            'ascii_encode=',
+            'md5_hash=',
+            'sha1_hash=',
+            'sha256_hash=',
+            'sha512_hash=',
         ])
     except:
         usage()
@@ -94,56 +110,86 @@ def main():
             usage()
         elif o in ['-f', '--file_md5']:
             md5_hash = hashlib.md5(open(a, 'rb').read()).hexdigest()
-            print 'File Name: ', a
+            print 'File Name:', a
             print 'Calculate Hash Values: ', md5_hash
 
         elif o in ['--file_sha1']:
             sha1_hash = hashlib.sha1(open(a, 'rb').read()).hexdigest()
-            print 'File Name: ', a
+            print 'File Name:', a
             print 'Calculate Hash Values: ', sha1_hash
 
         elif o in ['--file_sha256']:
             sha256_hash = hashlib.sha256(open(a, 'rb').read()).hexdigest()
-            print 'File Name: ', a
+            print 'File Name:', a
             print 'Calculate Hash Values: ', sha256_hash
 
         elif o in ['--file_sha512']:
             sha512_hash = hashlib.sha512(open(a, 'rb').read()).hexdigest()
-            print 'File Name: ', a
+            print 'File Name:', a
             print 'Calculate Hash Values: ', sha512_hash
 
         elif o in ['-b', '--base64_encode']:
             base64_str = base64.b64encode(a)
-            print 'Raw Data: ', a
+            print 'Raw Data:', a
             print 'Conversion Data: ', base64_str
 
         elif o in ['--base64_decode']:
             string = a
             base64_str = base64.b64decode(string)
-            print 'Raw Data: ', a
+            print 'Raw Data:', a
             print 'Conversion Data: ', base64_str
 
         elif o in ['-u', '--url_encode']:
             str_encode = re.sub(r'.', lambda m: '%%%s' % m.group(0).encode('hex'), a)
-            print 'Raw Data: ', a
+            print 'Raw Data:', a
             print 'Conversion Data: ', str_encode
 
         elif o in ['--url_decode']:
             str_decode = urllib.unquote(a)
-            print 'Raw Data: ', a
+            print 'Raw Data:', a
             print 'Conversion Data: ', str_decode
 
         elif o in ['-e', '--hex_encode']:
             hex_code = binascii.hexlify(a)
-            print 'Raw Data: ', a
+            print 'Raw Data:', a
             print 'Conversion Data: 0x%s' % hex_code
 
         elif o in ['--hex_decode']:
-            print 'Raw Data: ', a
+            print 'Raw Data:', a
             if a[0] == '0' and a[1] == 'x':
                 a = a[2:]
             hex_code = binascii.unhexlify(a)
             print 'Conversion Data: ', hex_code
+
+        elif o in ['-a', '--ascii_encode']:
+            print 'Raw Data:', a
+            ord_string = ''
+            for i in range(len(a)):
+                if i == 0:
+                    ord_string = str(ord(a[i]))
+                else:
+                    ord_string = ord_string + ' ' + str(ord(a[i]))
+            print ord_string
+
+        elif o in ['-m', '--md5_hash']:
+            md5_hash = hashlib.md5(a).hexdigest()
+            print 'Raw Data:', a
+            print 'Conversion Data:', md5_hash
+
+        elif o in ['--sha1_hash']:
+            sha1_hash = hashlib.sha1(a).hexdigest()
+            print 'Raw Data:', a
+            print 'Conversion Data:', sha1_hash
+
+        elif o in ['--sha256_hash']:
+            sha256_hash = hashlib.sha256(a).hexdigest()
+            print 'Raw Data:', a
+            print 'Conversion Data:', sha256_hash
+
+        elif o in ['--sha512_hash']:
+            sha512_hash = hashlib.sha512(a).hexdigest()
+            print 'Raw Data:', a
+            print 'Conversion Data:', sha512_hash
 
         else:
             print 'Can not handle this options'
