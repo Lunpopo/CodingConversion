@@ -136,11 +136,13 @@ def main():
         elif o in ['-e', '--hex_encode']:
             hex_code = binascii.hexlify(a)
             print 'Raw Data: ', a
-            print 'Conversion Data: ', hex_code
+            print 'Conversion Data: 0x%s' % hex_code
 
         elif o in ['--hex_decode']:
-            hex_code = binascii.unhexlify(a)
             print 'Raw Data: ', a
+            if a[0] == '0' and a[1] == 'x':
+                a = a[2:]
+            hex_code = binascii.unhexlify(a)
             print 'Conversion Data: ', hex_code
 
         else:
