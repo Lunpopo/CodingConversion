@@ -111,51 +111,61 @@ def main():
         elif o in ['-f', '--file_md5']:
             md5_hash = hashlib.md5(open(a, 'rb').read()).hexdigest()
             print 'File Name:', a
+            print 
             print 'Calculate Hash Values: ', md5_hash
 
         elif o in ['--file_sha1']:
             sha1_hash = hashlib.sha1(open(a, 'rb').read()).hexdigest()
             print 'File Name:', a
+            print 
             print 'Calculate Hash Values: ', sha1_hash
 
         elif o in ['--file_sha256']:
             sha256_hash = hashlib.sha256(open(a, 'rb').read()).hexdigest()
             print 'File Name:', a
+            print 
             print 'Calculate Hash Values: ', sha256_hash
 
         elif o in ['--file_sha512']:
             sha512_hash = hashlib.sha512(open(a, 'rb').read()).hexdigest()
             print 'File Name:', a
+            print 
             print 'Calculate Hash Values: ', sha512_hash
 
         elif o in ['-b', '--base64_encode']:
             base64_str = base64.b64encode(a)
             print 'Raw Data:', a
+            print 
             print 'Conversion Data: ', base64_str
 
         elif o in ['--base64_decode']:
             string = a
             base64_str = base64.b64decode(string)
             print 'Raw Data:', a
+            print 
             print 'Conversion Data: ', base64_str
 
         elif o in ['-u', '--url_encode']:
             str_encode = re.sub(r'.', lambda m: '%%%s' % m.group(0).encode('hex'), a)
             print 'Raw Data:', a
+            print 
             print 'Conversion Data: ', str_encode
 
         elif o in ['--url_decode']:
             str_decode = urllib.unquote(a)
             print 'Raw Data:', a
+            print 
             print 'Conversion Data: ', str_decode
 
         elif o in ['-e', '--hex_encode']:
             hex_code = binascii.hexlify(a)
             print 'Raw Data:', a
+            print 
             print 'Conversion Data: 0x%s' % hex_code
 
         elif o in ['--hex_decode']:
             print 'Raw Data:', a
+            print 
             if a[0] == '0' and a[1] == 'x':
                 a = a[2:]
             hex_code = binascii.unhexlify(a)
@@ -163,6 +173,7 @@ def main():
 
         elif o in ['-a', '--ascii_encode']:
             print 'Raw Data:', a
+            print 
             ord_string = ''
             for i in range(len(a)):
                 if i == 0:
@@ -174,21 +185,25 @@ def main():
         elif o in ['-m', '--md5_hash']:
             md5_hash = hashlib.md5(a).hexdigest()
             print 'Raw Data:', a
+            print 
             print 'Conversion Data:', md5_hash
 
         elif o in ['--sha1_hash']:
             sha1_hash = hashlib.sha1(a).hexdigest()
             print 'Raw Data:', a
+            print 
             print 'Conversion Data:', sha1_hash
 
         elif o in ['--sha256_hash']:
             sha256_hash = hashlib.sha256(a).hexdigest()
             print 'Raw Data:', a
+            print 
             print 'Conversion Data:', sha256_hash
 
         elif o in ['--sha512_hash']:
             sha512_hash = hashlib.sha512(a).hexdigest()
             print 'Raw Data:', a
+            print 
             print 'Conversion Data:', sha512_hash
 
         else:
