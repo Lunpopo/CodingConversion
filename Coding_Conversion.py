@@ -9,7 +9,7 @@ import re
 
 
 def usage():
-    print '''\033[1;31;38m
+    print '''\033[0;31;36m
     
                            .::::.
                          .::::::::.
