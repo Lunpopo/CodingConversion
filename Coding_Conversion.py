@@ -9,7 +9,8 @@ import re
 
 
 def usage():
-    print '''
+    print '''\033[1;31;38m
+    
                            .::::.
                          .::::::::.
                         :::::::::::     """"         """"
@@ -28,7 +29,7 @@ def usage():
          ...:::           ::::::::::::'              ``::.
         ```` ':.          ':::::::::'                  ::::..
                            '.:::::'                    ':'````..
-        '''
+        \033[0m'''
     print '[*] This is Coding Conversion script'
     print ''
     print '[*] Total Parameters:'
