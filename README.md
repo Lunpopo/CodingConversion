@@ -4,6 +4,23 @@
 
 ### Total Parameters:
 ```
+ _____           _ _             _____                               _
+/  __ \         | (_)           /  __ \                             (_)
+| /  \/ ___   __| |_ _ __   __ _| /  \/ ___  _ ____   _____ _ __ ___ _  ___  _ __
+| |    / _ \ / _` | | '_ \ / _` | |    / _ \| '_ \ \ / / _ \ '__/ __| |/ _ \| '_ \
+| \__/\ (_) | (_| | | | | | (_| | \__/\ (_) | | | \ V /  __/ |  \__ \ | (_) | | | |
+ \____/\___/ \__,_|_|_| |_|\__, |\____/\___/|_| |_|\_/ \___|_|  |___/_|\___/|_| |_|
+                            __/ |
+                           |___/
+
+                           """"         """"
+                         ""     "     ""     "
+                        ""           ""
+                         ""    """"""""""""""""""""
+                           """"         """"
+
+                         Coding Conversion Script
+
 -h --help               get this script help
 -f                      calculate file hash value, default md5
 --file_md5              use md5 to calculate file hash
@@ -37,4 +54,19 @@ python Coding_Conversion.py -url_decode "select%20%2A%20from%20users"
 
 python Coding_Conversion.py -e "i am your father"
 python Coding_Conversion.py --hex_decode "6920616d20796f757220666174686572"
+
+python Coding_Conversion.py -a "nidaye"'
+
+python Coding_Conversion.py -m "nidaye"'
+
+python Coding_Conversion.py --sha1_hash "nidaye"'
+python Coding_Conversion.py --sha256_hash "nidaye"'
+python Coding_Conversion.py --sha512_hash "nidaye"'
 ```
+
+### Author
+Lunpopo
+
+source link: [Github](https://github.com/Lunpopo/Coding_Conversion)
+
+This is a simple and small tool and wellcome to feedback. Thanks a lot!
