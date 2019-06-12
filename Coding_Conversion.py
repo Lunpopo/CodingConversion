@@ -40,16 +40,21 @@ def usage():
 
     print '[*] This is Coding Conversion script'
     print ''
+    print 'Help Module'
     print '[*] Total Parameters:'
     print '[*] -h --help             get this script help'
     print
-    print '[*] File Hash support comparison Hash provided with file hash calculated, it will return Comparison Result'
+    print 'File Hash Module'
+    print '[*] File Hash support comparison Hash provided with file hash calculated, it will return Comparison Result.'
     print '[*] -f                    calculate file hash value, default md5'
     print '[*] --file_md5            use md5 to calculate file hash'
     print '[*] --file_sha1           use sha1 to calculate file hash'
     print '[*] --file_sha256         use sha256 to calculate file hash'
     print '[*] --file_sha512         use sha512 to calculate file hash'
     print
+    print 'Encoding Module'
+    print 'If the strings of encoding are too long and its contain \' or ". so you need use \\ to'
+    print 'escape the especially characters.'
     print '[*] -b --base64_encode    -b option default is base64 encode'
     print '[*] --base64_decode'
     print

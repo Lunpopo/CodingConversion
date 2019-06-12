@@ -22,12 +22,15 @@
                          Coding Conversion Script
 
 -h --help               get this script help
+
+File Hash support comparison Hash provided with file hash calculated, it will return Comparison Result.
 -f                      calculate file hash value, default md5
 --file_md5              use md5 to calculate file hash
 --file_sha1             use sha1 to calculate file hash
 --file_sha256           use sha256 to calculate file hash
 --file_sha512           use sha512 to calculate file hash
 
+If the strings of encoding are too long and its contain ' or ". so you need use \ to escape the especially characters.
 -b --base64_encode      -b option default is base64 encode
 --base64_decode
 
