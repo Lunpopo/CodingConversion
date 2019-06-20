@@ -63,7 +63,7 @@ def main():
 
         if opt.file_sha256:
             sha256_hash = hashlib.sha256(open(opt.file_sha256[0], 'rb').read()).hexdigest()
-            print 'File Name: {}'.format(opt.sha256_hash[0])
+            print 'File Name: {}'.format(opt.file_sha256[0])
             print
             print colored('Calculate Hash Values: {}', 'yellow').format(sha256_hash)
             try:
