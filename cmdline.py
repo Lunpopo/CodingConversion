@@ -10,7 +10,7 @@ class ParseCmd(ArgumentParser):
         pass
 
     @classmethod
-    def parse_cmd(cls):
+    def parse_cmd(cls, script_name):
         """
         ArgumentParser(
             prog=None,
@@ -32,7 +32,7 @@ class ParseCmd(ArgumentParser):
 
         try:
             parser = ArgumentParser(description='Coding Conversion Script',
-                                    usage='python sqlmap [options]', add_help=False)
+                                    usage='python {} [options]'.format(script_name), add_help=False)
 
             helper = parser.add_argument_group("Help Module")
             helper.add_argument('-h', '--help', action='help', default=SUPPRESS,

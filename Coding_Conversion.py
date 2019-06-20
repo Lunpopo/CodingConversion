@@ -32,7 +32,7 @@ def banner():
 def main():
     # 如果任何参数都没有的情况下
     if not len(sys.argv[1:]):
-        popen = subprocess.Popen('python Coding_Conversion.py -h', shell=True, stdin=subprocess.PIPE,
+        popen = subprocess.Popen('python {} -h'.format(sys.argv[0]), shell=True, stdin=subprocess.PIPE,
                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         output, code = popen.communicate()
         print output
@@ -40,7 +40,7 @@ def main():
         banner()
 
         # cmdline() 处理所有的 command line 参数, 并全部存入 opt 中返回
-        opt = ParseCmd.parse_cmd()
+        opt = ParseCmd.parse_cmd(sys.argv[0])
         if opt.file_md5:
             md5_hash = hashlib.md5(open(opt.file_md5[0], 'rb').read()).hexdigest()
             print 'File Name: {}'.format(opt.file_md5[0])
