@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+*.log
+*.zip
+*.csv
+
+*/.DS_Store
+.DS_Store
+*/.idea/
+.idea/
